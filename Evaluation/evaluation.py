@@ -16,6 +16,9 @@ print("Root Mean Square Error (RMSE):", np.sqrt(mean_squared_error(true_train, p
 
 #MAPE
 print(" Mean Absolute Percentage Error (MAPE):", mean_absolute_percentage_error(true_train,prediction_train))
+#AUC
+print("AUC test:",AUC(true_train,prediction_train))
+print()
 print("Test accuracy for test set")
 #RMSE
 print("Root Mean Square Error (RMSE):", np.sqrt(mean_squared_error(true_test, prediction_test)))
