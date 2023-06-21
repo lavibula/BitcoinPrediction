@@ -26,7 +26,7 @@ def print_evaluation_results(true_values, predicted_values, dataset_name):
     
     # AUC
     auc = calculate_auc(true_values, predicted_values)
-    print("AUC test: {:.4f}".format(auc))
+    print("ACC test: {:.4f}".format(auc))
     print()
 
 # Print evaluation results for the train set
