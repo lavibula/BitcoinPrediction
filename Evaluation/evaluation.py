@@ -1,29 +1,36 @@
-from sklearn.metrics import mean_squared_error,mean_absolute_percentage_error
+from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 import numpy as np
-true_train=0
-prediction_train=0
-prediction_test=0
-true_test=1
-def AUC(true_test,prediction_test):
+
+true_train = 0
+prediction_train = 0
+prediction_test = 1
+true_test = 1
+
+def calculate_auc(true_values, predicted_values):
     count = 0
-    for i in range(1,len(true_test)):
-        if (true_test[i] - true_test[i-1]) * (prediction_test[i] - prediction_test[i-1]) > 0:
+    for i in range(1, len(true_values)):
+        if (true_values[i] - true_values[i-1]) * (predicted_values[i] - predicted_values[i-1]) > 0:
             count += 1
-    return count/(len(true_test)-1)
-print("Test accuracy for train set")
-#RMSE
-print("Root Mean Square Error (RMSE):", np.sqrt(mean_squared_error(true_train, prediction_train)))
+    return count / (len(true_values) - 1)
 
-#MAPE
-print(" Mean Absolute Percentage Error (MAPE):", mean_absolute_percentage_error(true_train,prediction_train))
-#AUC
-print("AUC test:",AUC(true_train,prediction_train))
-print()
-print("Test accuracy for test set")
-#RMSE
-print("Root Mean Square Error (RMSE):", np.sqrt(mean_squared_error(true_test, prediction_test)))
+def print_evaluation_results(true_values, predicted_values, dataset_name):
+    print("Test accuracy for", dataset_name)
+    print("------------------------------------------------------")
+    # RMSE
+    rmse = np.sqrt(mean_squared_error(true_values, predicted_values))
+    print("Root Mean Square Error (RMSE): {:.4f}".format(rmse))
+    
+    # MAPE
+    mape = mean_absolute_percentage_error(true_values, predicted_values)
+    print("Mean Absolute Percentage Error (MAPE): {:.4f}".format(mape))
+    
+    # AUC
+    auc = calculate_auc(true_values, predicted_values)
+    print("AUC test: {:.4f}".format(auc))
+    print()
 
-#MAPE
-print(" Mean Absolute Percentage Error (MAPE):", mean_absolute_percentage_error(true_test,prediction_test))
-#AUC
-print("AUC test:",AUC(true_test,prediction_test))
+# Print evaluation results for the train set
+print_evaluation_results(true_train, prediction_train, "train set")
+
+# Print evaluation results for the test set
+print_evaluation_results(true_test, prediction_test, "test set")
