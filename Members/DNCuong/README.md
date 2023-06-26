@@ -19,3 +19,10 @@ We follow a similar approach to Multiple Linear Regression, utilizing hyperparam
 
 # Conclusion
 By exploring different methodologies and fine-tuning our models, we aim to generate accurate predictions and insights into Bitcoin price movements.
+
+
+1. Docs chung nhóm: https://docs.google.com/document/d/182xPZ3Ul8HCVh77qIRNY-pT9e0FyJfjZ3q-vUvjqqmw/edit
+
+2. Report: https://www.overleaf.com/project/64929d030e8fe2041fb823c9
+
+3. Slide môn: https://husteduvn-my.sharepoint.com/:f:/g/personal/cuong_dn210141_sis_hust_edu_vn/EjyViQMj-IhMnYp7spERuqsBS3kXXLunTQVHyOITwkJMpQ?e=I1o2MI
