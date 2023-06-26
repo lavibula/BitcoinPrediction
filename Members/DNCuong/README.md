@@ -2,20 +2,19 @@
 We explore two methodologies for predicting Bitcoin prices: Multiple Linear Regression and XGBoost Regression.
 
 ## Data Processing
-Use BTC_tomorrow làm target cho X_today
+Use BTC_close_tomorrow -> y (Target col) of X_today, BTC_close_today -> 1 feature in X_today.
 
 Both methods utilize TimeSeriesSplit for data preprocessing to ensure the training set contains past data while the test set consists of future data. 
 
 ## Data Split
-* NCuong: 2 phần train, test. Tập Train: TimeSeriesSplit để tìm parameters. Tìm xong cho gán vào test.
+* 2 sets: Train set and Test set. (Last 250 days or 20% for Test). 
+- Train set: TimeSeriesSplit with GirdSearch and RandomizedSearch to find best parameters,
+- and Test set for Test. 
 
-Split Data: Last 250 days for Test. 
-Train set with GirdSearch and RandomizedSearch to find best parameters, and Test set for Test. (I don't split: Train, Valid, Test)
-
-* Mỹ Linh chia 3 phần: train, val, test. 
-- Tập Train: dùng TimeSeriesSplit để tìm parameters = Grid Search và Randomized Search. 
-- Tập Train-Valid:  Tthử 3 bộ param: default_param, grid_param, random_param với test=VALID xem cái nào tốt nhất trong 3 cái. 
-- Chọn cái tốt nhất để train lại với Train-Valid và Test.
+* 3 sets: Train, Val, Test set. 
+- Train set: TimeSeriesSplit with GirdSearch and RandomizedSearch to find best parameters
+- Train-Valid: Use default_param, grid_param, random_param với (train, test) = (Train set, Test set)
+- Test set: (train, test) = (Train&Val set, Test set) with best_param from (default_param, grid_param, random_param)
 
 ## Multiple Linear Regression
 
@@ -32,6 +31,8 @@ We follow a similar approach to Multiple Linear Regression, utilizing hyperparam
 # Conclusion
 By exploring different methodologies and fine-tuning our models, we aim to generate accurate predictions and insights into Bitcoin price movements.
 
+# Other folders: 
+Data Collection Reference, Model Reference, Model Selection Reference
 
 1. Docs chung nhóm: https://docs.google.com/document/d/182xPZ3Ul8HCVh77qIRNY-pT9e0FyJfjZ3q-vUvjqqmw/edit
 
