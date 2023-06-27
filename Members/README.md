@@ -35,7 +35,6 @@ SORT ACCORDING **R2_TEST**:
 | Adaboost          | 0.9924 | 1508.1469 | 77.2415% | 0.7346 | 2173.5470| 75.3318% | 
 | ARIMA         | 0.9970 | 733.2738 | 2.8100% | -1.5391 | 21103.8951 | 79.7169% |
 
-
 Analyze the performance results of the models *BITCOIN PRICE PREDICTION*
 
 **Overall**
@@ -45,12 +44,13 @@ From the analysis, it can be observed that several models exhibit good performan
 On the other hand, KNN, Adaboost, and ARIMA models display lower effectiveness compared to other models. These models exhibit lower R2 values on the test set and higher error metrics, particularly Adaboost and ARIMA, which demonstrate significantly higher MAPE% values on the test set.
 
 **Analyzing the different types of models used**
+*Experiments show that:*
 
 1. The statistical model ARIMA shows the lowest performance. This can be attributed to the fact that this method utilizes less information compared to other approaches, leading to lower performance.
 
-2. Machine learning models, such as Linear Regression, demonstrate good performance. It can be hypothesized that this is due to good data normalization and the presence of linear relationships between various economic and market factors. On the other hand, KNN and SVM do not perform as well.
+2. Machine learning models, such as Linear Regression, demonstrate good performance. It can be hypothesized that this is due to good data normalization and the presence of linear relationships between various economic and market factors. Linear regression gives better performance than KNN and SVM
 
-3. Ensemble Learning models including Bagging methods like Random Forest and Boosting methods like AdaBoost, CatBoost, XGBoost and LightGBM did not show significantly high performance except for the Random Forest method.
+3. Ensemble learning models, including bagging methods such as Random Forest and boosting methods such as AdaBoost, CatBoost, XGBoost, and LightGBM, demonstrated good performance but fell short of expectations, with the exception of the Random Forest method. This is because Random Forests typically employ a large number of decision trees, each with a relatively high depth, which enables them to learn complex rules and make efficient use of the relationship between features. On the other hand, LightGBM, XGBoost, AdaBoost, and CatBoost also perform well but require adjusting the number and depth of trees for optimal results.
 
 4. The Deep Learning model demonstrates good performance at a high level, and there is still room for improvement. However, due to time and resource limitations, we were unable to adjust the parameters or create more complex neural networks to maximize the model's performance. 
 
