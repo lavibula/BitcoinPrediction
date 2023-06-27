@@ -2,8 +2,19 @@
 We explore two methodologies for predicting Bitcoin prices: Multiple Linear Regression and XGBoost Regression.
 
 ## Data Processing
+Use BTC_close_tomorrow -> y (Target col) of X_today, BTC_close_today -> 1 feature in X_today.
 
 Both methods utilize TimeSeriesSplit for data preprocessing to ensure the training set contains past data while the test set consists of future data. 
+
+## Data Split
+* 2 sets: Train set and Test set. (Last 250 days or 20% for Test). 
+- Train set: TimeSeriesSplit with GirdSearch and RandomizedSearch to find best parameters,
+- and Test set for Test. 
+
+* 3 sets: Train, Val, Test set. 
+- Train set: TimeSeriesSplit with GirdSearch and RandomizedSearch to find best parameters
+- Train-Valid: Use default_param, grid_param, random_param với (train, test) = (Train set, Test set)
+- Test set: (train, test) = (Train&Val set, Test set) with best_param from (default_param, grid_param, random_param)
 
 ## Multiple Linear Regression
 
@@ -20,6 +31,8 @@ We follow a similar approach to Multiple Linear Regression, utilizing hyperparam
 # Conclusion
 By exploring different methodologies and fine-tuning our models, we aim to generate accurate predictions and insights into Bitcoin price movements.
 
+# Other folders: 
+Data Collection Reference, Model Reference, Model Selection Reference
 
 1. Docs chung nhóm: https://docs.google.com/document/d/182xPZ3Ul8HCVh77qIRNY-pT9e0FyJfjZ3q-vUvjqqmw/edit
 
