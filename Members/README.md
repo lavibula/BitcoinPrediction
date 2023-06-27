@@ -1,5 +1,7 @@
 # Model Selection: 
 
+General performance summary table of models: 
+
 |           |Train Set| Train Set|Train Set|Test Set|Test Set|Test Set|
 |-----------|-------|----------|---------|-------|----------|---------|
 | **Model**| **R2** | **RMSE** | **MAPE%**   | **R2**    | **RMSE**    | **MAPE%**  |
@@ -10,10 +12,11 @@
 | Adaboost          | 0.9924 | 1508.1469 | 77.2415% | 0.7346 | 2173.5470| 75.3318% | 
 | XGBoost           | 0.9970 | 925.0439 | 2.9174% | 0.9501 | 1015.8001| 3.5157% |
 | LightGBM           | --- | 549.2033 | 1.2529% | 0.9640 |805.4951| 2.4725% |
+| ARIMA         | 0.9970 | 733.2738 | 2.8100% | -1.5391 | 21103.8951 | 79.7169% |
 | GAN           | 0.9955 | 706.8428 | 3.29% | 0.9651 | 731.9221| 2.30% |
 | GRU           | 0.9971 | 666.0494 | 2.98% | 0.9738 | 651.7368| 2.04% |
 | LSTM          | 0.9969 | 666.1824 | 3.00% | 0.9736 | 669.6527| 2.07% |
-| ARIMA         | 0.9970 | 733.2738 | 2.8100% | -1.5391 | 21103.8951 | 79.7169% |
+
 
 SORT ACCORDING **R2_TEST**: 
 
@@ -32,44 +35,25 @@ SORT ACCORDING **R2_TEST**:
 | Adaboost          | 0.9924 | 1508.1469 | 77.2415% | 0.7346 | 2173.5470| 75.3318% | 
 | ARIMA         | 0.9970 | 733.2738 | 2.8100% | -1.5391 | 21103.8951 | 79.7169% |
 
-Phân tích results mẫu: 
-As we can see, the performance of the statistical
-models is the lowest. This is relatively easy to
-understand because in this method we only use
-the close price for forecasting, the model uses
-much less information than others, so low per-
-formance is inevitable.
+Analyze the performance results of the models *BITCOIN PRICE PREDICTION*
 
-Next to the linear methods, the method that we
-see the best performance is LDA. We don’t have
-time to analyze specifically what the reason is
-here, but we will make an assumption that be-
-cause our window normalization causes the fea-
-ture distributions to move towards normal dis-
-tributions. Most of the dimensions do not carry
-many classification capabilities, so they satisfy
-more applicable conditions than Logistic Regres-
-sion or Support Vector Machine.
-Regarding ensemble learning methods, we can
-see the superiority of boosting, performance on
-this set of methods is stronger than other mod-
-els.
-As for Deep Learning models, the performance is
-at a good threshold. We think the performance
-can be even better on GAN and LSTM but we
-don’t have resources to tune the parameters nor
-make the neural network more complicated to
-see if the performance can be higher than boosting. 
+**Overall**
 
-In summary, we can see the superiority of boost-
-ing over linear models (with very fast train-
-ing times and very good performance). Deep
-Learning has a good performance but the train-
-ing time is really long and the tuning of the
-parameters is also extremely resource-intensive
+From the analysis, it can be observed that several models exhibit good performance in predicting Bitcoin prices. The top-performing models include Linear Regression, Random Forest, GRU, LSTM, GAN, and LightGBM, which demonstrate high R2 values on both the training and test sets. Additionally, these models exhibit low RMSE values and MAPE% on the test set, indicating accurate predictions with minimal error.
 
-and time-consuming. Therefore, we will choose
-LightGBM as a representative model for analy-
-sis in the following sections.
+On the other hand, KNN, Adaboost, and ARIMA models display lower effectiveness compared to other models. These models exhibit lower R2 values on the test set and higher error metrics, particularly Adaboost and ARIMA, which demonstrate significantly higher MAPE% values on the test set.
 
+**Analyzing the different types of models used**
+*Experiments show that:*
 
+1. The statistical model ARIMA shows the lowest performance. This can be attributed to the fact that this method utilizes less information compared to other approaches, leading to lower performance.
+
+2. Machine learning models, such as Linear Regression, demonstrate good performance. It can be hypothesized that this is due to good data normalization and the presence of linear relationships between various economic and market factors. Linear regression gives better performance than KNN and SVM
+
+3. Ensemble learning models, including bagging methods such as Random Forest and boosting methods such as AdaBoost, CatBoost, XGBoost, and LightGBM, demonstrated good performance but fell short of expectations, with the exception of the Random Forest method. This is because Random Forests typically employ a large number of decision trees, each with a relatively high depth, which enables them to learn complex rules and make efficient use of the relationship between features. On the other hand, LightGBM, XGBoost, AdaBoost, and CatBoost also perform well but require adjusting the number and depth of trees for optimal results.
+
+4. The Deep Learning model demonstrates good performance at a high level, and there is still room for improvement. However, due to time and resource limitations, we were unable to adjust the parameters or create more complex neural networks to maximize the model's performance. 
+
+**In summary**
+
+In summary, the analysis reveals the superiority of linear methods, such as Linear Regression and Random Forest, compared to other models in terms of training time and overall performance. Deep learning models exhibit good performance and have the potential for further improvement, but they require longer training times and resource-intensive parameter tuning.
