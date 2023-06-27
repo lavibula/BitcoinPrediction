@@ -19,6 +19,9 @@ def print_evaluation_results(true_values, predicted_values, dataset_name):
     mape = mean_absolute_percentage_error(true_values, predicted_values)
     print("Mean Absolute Percentage Error (MAPE): {:.4f}".format(mape))
 
+    #r2 score
+    print("R2 score: ", r2_score(true_values,predicted_values))
+
 # Print evaluation results for the train set
 print_evaluation_results(true_train, prediction_train, "train set")
 
