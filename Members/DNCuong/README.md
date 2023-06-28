@@ -38,7 +38,9 @@ Data Collection Reference, Model Reference, Model Selection Reference
 
 https://docs.google.com/spreadsheets/d/13-slQv1toeaVKcFM22S9Gb3xPj_X6Apepwmo5fB2m3g/edit?fbclid=IwAR2CFOG6um7NPJV-XwjZdTG1Euw4O7ffYsLY3caSI13j9AE-I4fW0SUfYoA#gid=0
 
-2. Report: https://www.overleaf.com/project/64929d030e8fe2041fb823c9
+2. Slide presentation: https://husteduvn-my.sharepoint.com/:p:/g/personal/long_nt214912_sis_hust_edu_vn/EXSW7cVBIq5Ehq2eFumxmZcBCyFzr-r2po3W3sX6H4lHCg?e=LXxbMS&nav=eyJzSWQiOjI1Nn0&fbclid=IwAR1zg4_utqa4-VloCUNVgUXiNNpcQhC_PzqUi0Fh4XbqPxtzX_-zxO8qomM
 
-3. Slide môn: https://husteduvn-my.sharepoint.com/:f:/g/personal/cuong_dn210141_sis_hust_edu_vn/EjyViQMj-IhMnYp7spERuqsBS3kXXLunTQVHyOITwkJMpQ?e=I1o2MI
+3. Report: https://www.overleaf.com/project/64929d030e8fe2041fb823c9
+
+4. Slide môn học thầy Khoát: https://husteduvn-my.sharepoint.com/:f:/g/personal/cuong_dn210141_sis_hust_edu_vn/EjyViQMj-IhMnYp7spERuqsBS3kXXLunTQVHyOITwkJMpQ?e=I1o2MI
 
