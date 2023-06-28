@@ -8,13 +8,13 @@ Both methods utilize TimeSeriesSplit for data preprocessing to ensure the traini
 
 ## Data Split
 * 2 sets: Train set and Test set. (Last 250 days or 20% for Test). 
-- Train set: TimeSeriesSplit with GirdSearch and RandomizedSearch to find best parameters,
-- and Test set for Test. 
+    - Train set: TimeSeriesSplit with GirdSearch and RandomizedSearch to find best parameters,
+    - and Test set for Test. 
 
 * 3 sets: Train, Val, Test set. 
-- Train set: TimeSeriesSplit with GirdSearch and RandomizedSearch to find best parameters
-- Train-Valid: Use default_param, grid_param, random_param với (train, test) = (Train set, Test set)
-- Test set: (train, test) = (Train&Val set, Test set) with best_param from (default_param, grid_param, random_param)
+    - Train set: TimeSeriesSplit with GirdSearch and RandomizedSearch to find best parameters
+    - Train-Valid: Use default_param, grid_param, random_param với (train, test) = (Train set, Test set)
+    - Test set: (train, test) = (Train&Val set, Test set) with best_param from (default_param, grid_param, random_param)
 
 ## Multiple Linear Regression
 
