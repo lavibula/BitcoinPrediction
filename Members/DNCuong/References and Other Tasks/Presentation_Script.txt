@@ -1,0 +1,105 @@
+Link docs online: 
+https://docs.google.com/document/d/1kq8rR9qnz57_ETmYe9uB5IjvKec_4blZ6lfO6SdFUfk/edit
+
+Multiple Linear Regression is a statistical technique that aims to predict
+ the value of a dependent variable based on multiple independent variables.
+
+We need to make a little distinction between Simple Linear Regression 
+and Multiple Linear Regression
+
+Simple Linear Regression: only 1 independent variable Y = b0 + b1*X 
+     [wai=be zero plus be one multiplied X]
+In there: 
+- y (WAI) is the dependent variable
+- X is the independent variable
+- b0 is the intercept (also known as the coefficient [ˌkoʊ.ɪˈfɪʃ.ənt]
+ of freedom or constant [ˈkɑːn.stənt] term)
+- b1 is the coefficient or the slope [sloʊp] of the regression line
+
+    - Multiple Linear Regression: More than one independent variable   
+    Y = m0 + m1X1 + m2X2 + m3X3 + ... + mNXN**   
+In there, y, X1 to XN, and m0 to mN are defined in the same way as in Simple Linear Regression.
+
+2. How Linear Regression Model works:
+- In Linear Regression, we need to find the parameter set m_i (i from 0 to N) so that the function Y = f(X) best fits the training data set.
+
+- The process of finding the model parameter: w0, w1, ..., wn set through
+ the training process can use Gradient Descent, 
+ Stochastic [stəˈkæs.tɪk] Gradient Descent 
+ or Normal Equation methods by optimizing the MSE loss function. 
+
+NEXT SLIDE
+
+This is MSE (Mean Squared Error) or loss function formula
+ (between the predicted values and the true values): 
+
+"The Mean Squared Error (MSE) is equal to one over n,
+ multiplied by the sum of the squared differences between the actual values (y) and the predicted values (ŷ).
+
+
+3. Lasso and Ridge Regression
+- Due to reduce overfitting in the Linear Regression model we use Lasso and Ridge Regression
+    - Lasso uses L1 regularization [ˌreɡ.jə.lɚ.əˈzeɪ.ʃən]: to remove [rɪˈmuːv] unimportant
+     variables completely BY pushing the coefficients to zero completely. 
+    - Ridge uses L2 regularization [ˌreɡ.jə.lɚ.əˈzeɪ.ʃən]: to remove unimportant variables incompletely
+     BY pushing the coefficients close to zero, but never down to zero completely.    
+- The choice between these two methods depends on THE NUMBER OF FEATURES
+ AND INFLUENCE OF EACH FEATURE.
+
+3.2. How model work? Lasso and Ridge's model works similarly to Linear Regression with loss function. 
+
+Here is the formula for the Lasso Regression loss function.
+
+The MSE of Lasso equals the MSE plus
+ the regularization parameter alpha multiplied by 
+ the sum of the absolute values of the model coefficients (w_j).
+
+Here is the formula for the Ridge Regression loss function.
+
+The MSE of Ridge equals the MSE plus the regularization parameter alpha
+ multiplied by the sum of squares of the model coefficients (w_j).
+
+In there: 
+- w_j is the weight corresponding [ˌkɔːr.əˈspɑːn.dɪŋ] to the j th feature in the model [ˈmɑː.dəl].
+- alpha is the regularization parameter.
+
+OKE, NEXT
+
+Ensemble Methods [ˌɑːnˈsɑːm.bəl] is a method of combining multiple models.
+ Three common [ˈkɑː.mən]  ensemble methods are Stacking, Bagging and Boosting techniques.     
+
+NEXT SLIDE
+The first. 
+- XGBoost (eXtreme Gradient Boosting) is a machine learning algorithm based on a decision tree 
+and gradient boosting technique, designed to handle continued classification 
+or estimation problems, efficient and accurate in processing the data large
+ and multidimensional [ˌmʌl.ti.daɪˈmen.ʃən.əl] data sets.
+
+NEXT SLIDE
+
+2. How does the XGBoost model work? 
+- XGBoost use: regularization to reduce overfitting,
+ gradient boosting to optimize tree weights,
+  parallelization [perel_lelai`zation] to train independent trees and speed up the training process, and tools to monitor (giám sát) the training process.
+- The goal of the XGBoost model is to optimize the loss function, minimizing the difference between the predicted value and the actual value.  (ALT SHIFT 5)
+- The loss function of XGBoost is the sum of the loss functions of each tree
+ in the population (quần thể),
+  including the loss function of the regularization terms(thuật ngữ chính quy).
+
+Here is the main formula of the loss function in XGBoost.
+
+"Objective value at iteration t  is equal to the sum of the loss function () evaluated for each training data point ,
+ where the loss function compares the target value 
+ with the predicted value at the previous iteration plus the predicted value of the t-th tree ,
+  and this sum is then added to the regularization term ."
+
+In there:
+- $Obj^{(t)}$ is the loss function value at the t_th loop.
+- $n$ is the number of training data points.
+- $y_i$ is the target value of the i-th data point.
+- $\hat{y}_i^{(t-1)}$ is the predicted value of the model at the previous loop t-1.
+- $f_t(x_i)$ is the predicted value of the t tree on the ith data point.
+- $l(y_i, \hat{y}_i^{(t-1)}+f_t(x_i))$ is a loss function,
+ which measures [ˈmeʒ.ɚ] the difference between the predicted value and the actual value economy [iˈkɑː.nə.mi] on the i-th data point.
+- $\Omega(f_t)$ is the regularization term (hàm chi phí), which measures the complexity of the t-th tree.
+
